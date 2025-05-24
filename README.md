@@ -16,6 +16,10 @@ This app interfaces with an LMStudio server running on a PC. It allows users to 
 - Bi-directional ping system:
   - Detects if the server (PC) is online
   - Detects if the (mobile/pc) client is online
+- Input and output are both saved on the server and synced when client reconnects
+- Encrypted data sync between server and client
+- The PC server also acts as a client to send/receive data and manage state
+- All prompt data (input/output + selected model) is stored in a secure local database on the server
 
 ---
 
@@ -27,7 +31,7 @@ User selects a model from the list (e.g. `llama-3`).
 
 ### 2. Prompt Entry
 
-User enters a prompt and presses "Send". The prompt, along with its associated model, is added to a local queue.
+User enters a prompt, selects model and presses "Send". The prompt, along with its associated model, is added to a local queue.
 
 ### 3. Queuing System
 
@@ -39,10 +43,14 @@ User enters a prompt and presses "Send". The prompt, along with its associated m
 
 - If the app cannot connect to the server, prompts are saved offline.
 - The local queue persists until the server is reachable again.
+- The server can also operate offline and stores input/output in its own encrypted database.
+
 
 ### 5. Automatic Sync
 
 - When the server (PC) becomes available, the app automatically sends all queued prompts in order.
+- Likewise, when the client comes back online, the server syncs saved prompts and outputs back to the client.
+- All data transferred is encrypted for security.
 
 ### 6. Ping System
 
@@ -71,17 +79,22 @@ User enters a prompt and presses "Send". The prompt, along with its associated m
 
 ## 📌 Example Use Case
 
-1. Select `model_1` model  
+1. Select `Llama` model  
 2. Enter `Prompt 1` and press Send  
-3. While `Prompt 1` is processing, enter `Prompt 2` with `model_2` which gets added to the 
-4. If offline, both prompts are stored locally  
+3. While `Prompt 1` is processing, enter `Prompt 2` with `mistral` which gets added to the queue
+4. If offline, prompt are stored locally with the model  
 5. Once online, prompts are sent to the correct models in order
+5. Meanwhile, the **server app also saves input/output locally**, waiting for the client to reconnect.
+6. Once the connection is restored:
+   - The mobile app **automatically sends** all queued prompts to the server.
+   - The server **syncs any stored prompt-output history back to the client**.
+   - All data is encrypted during sync.
 
 ---
 
 ## 📝 Changelog
 
-### v0.1.0 (Work In Progress)
+### v0.0.1 (Concept)
 - Initial README and project concept defined
 - Feature list drafted
 - Development TODO list created
@@ -89,4 +102,4 @@ User enters a prompt and presses "Send". The prompt, along with its associated m
 
 ---
 
-Let me know if you'd like a downloadable version or a GitHub repo structure to go along with it.
+Let me know if there are any features or techniques to implement. Do a pull request for any further suggestions.
