@@ -1,12 +1,12 @@
 # LMMQ- (Local Model Management Queue) -prompt-Queuing-and-remote-prompt-execution-for-local-llm
 # LMRMQ (Local Model Remote Management Queue)
-# 📱 LMStudio Prompt Queue App
+# 🤯 LMStudio Prompt Queue App
 
 This app interfaces with an LMStudio server running on a PC. It allows users to select different models (like LLaMA 3), queue prompts, and send them even while others are still processing. Prompts are stored offline when the server is unavailable and automatically sent when the connection is restored.
 
 ---
 
-## 🧠 Features
+## 🔥 Features
 
 - Select any available model (e.g. `llama-3`, `Gemma`)
 - Enter and send multiple prompts in parallel
@@ -77,7 +77,7 @@ User enters a prompt, selects model and presses "Send". The prompt, along with i
 
 ---
 
-## 📌 Example Use Case
+## 📒 Example Use Case
 
 1. Select `Llama` model  
 2. Enter `Prompt 1` and press Send  
