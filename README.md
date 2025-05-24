@@ -36,6 +36,11 @@ A modular system for local model prompt management and remote prompt execution u
 - Sync happens automatically when connection is restored
 - Prompt data includes input, output, and selected model
 - Local encrypted database stores all prompt history on the server
+- The **PC server (LMMQ WApp1)** is composed of two compartmentalized apps:
+  - A **Server app** for handling prompt execution and syncing
+  - A **Client app** for queuing and managing user interaction
+- WApp1 integrates these two components natively while keeping them modular
+- **WApp2** is a **standalone Client** for Windows that connects to any LMMQ server
 
 ---
 
@@ -45,9 +50,13 @@ A modular system for local model prompt management and remote prompt execution u
 
 - PC app that serves as both server and client
 - Can queue, execute, store, and sync prompts
-- Can run in:
-  - **WApp1**: full Server + Client mode
-  - **WApp2**: Client-only mode to sync with another LMMQ instance
+- Includes two distribution modes:
+  - **WApp1**: Full Suite  
+    - Contains both **Server** and **Client** as **separate apps**, natively integrated through compartmentalization.
+    - Runs in a unified interface, but each module (Server, Client) operates independently in the background.
+  - **WApp2**: Client-Only  
+    - Lightweight desktop app that connects to an existing LMMQ Server instance (e.g., on another PC).
+- Handles queuing, local model execution, encrypted storage, and syncing with remote clients.
 
 ### 📱 LMRMQ (Local Model Remote Management Queue)
 
