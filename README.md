@@ -38,7 +38,7 @@ A modular system for local model prompt management and remote prompt execution u
 - Local encrypted database stores all prompt history on the server
 - The **PC server (LMMQ WApp1)** is composed of two compartmentalized apps:
   - A **Server app** for handling prompt execution and syncing
-  - A **Client app** for queuing and managing user interaction
+  - A **Client app** for queuing and managing other server 
 - WApp1 integrates these two components natively while keeping them modular
 - **WApp2** is a **standalone Client** for Windows that connects to any LMMQ server
 
