@@ -1,4 +1,4 @@
-# LMMQ--prompt-Queuing-and-remote-prompt-execution-for-local-llm
+# LMMQ- (Local Model Management Queue) -prompt-Queuing-and-remote-prompt-execution-for-local-llm
 # LMRMQ (Local Model Remote Management Queue)
 # 📱 LMStudio Prompt Queue App
 
